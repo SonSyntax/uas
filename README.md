@@ -1,8 +1,8 @@
 # uas
 
-Program ini terdiri dari beberapa kelas utama, yaitu Data, view, dan process.
+# Program ini terdiri dari beberapa kelas utama, yaitu Data, view, dan process.
 
-1. Kelas Data
+## 1. Kelas Data
 Kelas Data digunakan untuk menyimpan informasi pengguna yang terdiri dari Nama, No. Telp, dan Email.
 
 ```python
@@ -14,7 +14,7 @@ class Data:
         self.email = email
 ````
 
-2. Kelas view
+## 2. Kelas view
 Kelas view bertanggung jawab untuk menangani tampilan dan interaksi dengan pengguna. Kelas ini memiliki beberapa metode:
 
 get_input(): Untuk meminta input dari pengguna (Nama, No. Telp, dan Email).
@@ -45,7 +45,7 @@ class view:
         print(message)
 ````
 
-3. Kelas process
+## 3. Kelas process
 Kelas process berfungsi untuk memvalidasi data yang dimasukkan oleh pengguna. Metode-metode dalam kelas ini adalah:
 
 validate_name(name): Memastikan nama hanya berisi huruf.
@@ -77,7 +77,7 @@ class process:
         process.validate_phone(data.phone)
         process.validate_email(data.email)
 ````
-4. Fungsi main
+## 4. Fungsi main
 Fungsi utama main() mengendalikan alur program. Di dalamnya, program akan terus meminta input dari pengguna dan memvalidasi data hingga pengguna memilih untuk berhenti.
 
 ```python
@@ -103,5 +103,5 @@ def main():
             break
 ```
 
-5. Menjalankan Program
+## 5. Menjalankan Program
 Program dijalankan dengan memanggil fungsi main(). Setiap kali pengguna memasukkan data, program akan memvalidasi data tersebut, kemudian menambahkannya ke dalam tabel jika data valid.

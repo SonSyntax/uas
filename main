@@ -1,0 +1,22 @@
+def main():
+    data_table = []
+    while True:
+        try:
+            name, phone, email = view.get_input()
+            data = Data(name, phone, email)
+            
+            process.validate_data(data)
+            
+            data_table.append(data)
+            view.display_message("pendaftaran valid")
+            
+            view.table_view(data_table)
+        except ValueError as e:
+            view.display_message(f"Error: {e}")
+            
+        continue_input = input("apakah anda ingin melalukan pendaftaran lagi? (y/n): ")
+        if continue_input.lower() != "y":
+            break
+
+if __name__=="__main__":
+    main()

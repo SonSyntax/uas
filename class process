@@ -1,0 +1,17 @@
+class process:
+    def validate_name(name):
+        if not name.isalpha:
+            raise ValueError("Hanya berisi huruf")
+        
+    def validate_phone(phone):
+        if not phone.isdigit:
+            raise ValueError("hanya berisi angka")
+        
+    def validate_email(email):
+        if not re.match(r"[^@]+@[^@]+\.[^@]", email):
+            raise ValueError("harus meggunakan huruf '@' & '.'  .")
+        
+    def validate_data(data):
+        process.validate_name(data.name)
+        process.validate_phone(data.phone)
+        process.validate_email(data.email)

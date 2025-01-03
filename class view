@@ -1,0 +1,18 @@
+class view:
+    def get_input():
+        name = input("Nama: ")
+        phone = input("No. Telp: ")
+        email = input("Email: ")
+        return name, phone, email
+    
+    def table_view(data_table):
+        print("="*93)
+        print("| NO |               NAMA               |        NO.TELP        |           EMAIL           |")
+        print("="*93)
+        
+        for i, data in enumerate(data_table, start=1):
+            print(f"| {i:<2} | {data.name:<32} | {data.phone:<21} | {data.email:<25} |")
+        print("="*93)
+        
+    def display_message(message):
+        print(message)

@@ -1,3 +1,5 @@
+from Data.Data1 import Data_Pendaftaran
+
 class view:
     def get_input():
         name = input("Nama: ")

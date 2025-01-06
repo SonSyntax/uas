@@ -7,7 +7,7 @@ Kelas Data digunakan untuk menyimpan informasi pengguna yang terdiri dari Nama, 
 
 ```python
 Copy code
-class Data:
+class Data_Pendaftaran:
     def __init__(self, name, phone, email):
         self.name = name
         self.phone = phone
@@ -22,15 +22,15 @@ table_view(data_table): Untuk menampilkan tabel yang berisi data pengguna yang s
 display_message(message): Untuk menampilkan pesan kepada pengguna.
 ```python
 Copy code
-class view:
-    @staticmethod
+from Data.Data1 import Data_Pendaftaran
+
+class view_pendaftaran:
     def get_input():
         name = input("Nama: ")
         phone = input("No. Telp: ")
         email = input("Email: ")
         return name, phone, email
     
-    @staticmethod
     def table_view(data_table):
         print("="*93)
         print("| NO |               NAMA               |        NO.TELP        |           EMAIL           |")
@@ -40,7 +40,6 @@ class view:
             print(f"| {i:<2} | {data.name:<32} | {data.phone:<21} | {data.email:<25} |")
         print("="*93)
         
-    @staticmethod
     def display_message(message):
         print(message)
 ````
@@ -55,52 +54,61 @@ validate_data(data): Menggabungkan semua validasi menjadi satu fungsi untuk memv
 
 ```python
 Copy code
-class process:
-    @staticmethod
+import re
+from Data.Data1 import Data_Pendaftaran
+from View.View1 import view_pendaftaran
+
+
+class process_pendaftaran:
     def validate_name(name):
-        if not name.isalpha():
+        if not name.isalpha:
             raise ValueError("Hanya berisi huruf")
         
-    @staticmethod
     def validate_phone(phone):
-        if not phone.isdigit():
+        if not phone.isdigit:
             raise ValueError("hanya berisi angka")
         
-    @staticmethod
     def validate_email(email):
-        if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
+        if not re.match(r"[^@]+@[^@]+\.[^@]", email):
             raise ValueError("harus meggunakan huruf '@' & '.'  .")
         
-    @staticmethod
     def validate_data(data):
-        process.validate_name(data.name)
-        process.validate_phone(data.phone)
-        process.validate_email(data.email)
+        process_pendaftaran.validate_name(data.name)
+        process_pendaftaran.validate_phone(data.phone)
+        process_pendaftaran.validate_email(data.email)
 ````
 ## 4. Fungsi main
 Fungsi utama main() mengendalikan alur program. Di dalamnya, program akan terus meminta input dari pengguna dan memvalidasi data hingga pengguna memilih untuk berhenti.
 
 ```python
 Copy code
+import re
+from Data.Data1 import Data_Pendaftaran
+from View.View1 import view_pendaftaran
+from Process.Process1 import process_pendaftaran
+
 def main():
     data_table = []
     while True:
         try:
-            name, phone, email = view.get_input()
-            data = Data(name, phone, email)
+            name, phone, email = view_pendaftaran.get_input()
+            data = Data_Pendaftaran(name, phone, email)
             
-            process.validate_data(data)
+            process_pendaftaran.validate_data(data)
             
             data_table.append(data)
-            view.display_message("pendaftaran valid")
+            view_pendaftaran.display_message("pendaftaran valid")
             
-            view.table_view(data_table)
+            view_pendaftaran.table_view(data_table)
         except ValueError as e:
-            view.display_message(f"Error: {e}")
+            view_pendaftaran.display_message(f"Error: {e}")
             
         continue_input = input("apakah anda ingin melalukan pendaftaran lagi? (y/n): ")
         if continue_input.lower() != "y":
             break
+    
+if __name__=="__main__":
+    main()
 ```
 
 ## 5. Menjalankan Program

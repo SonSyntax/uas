@@ -7,6 +7,8 @@ Berikut penjelasan Lengkap :
 https://youtu.be/j1wJ_SsXOsI?feature=shared
 ````
 
+![yt1](https://github.com/user-attachments/assets/5ff1d295-60e5-48ef-b7da-c4aceade974c)
+
 
 ## 1. Kelas Data
 Kelas Data digunakan untuk menyimpan informasi pengguna yang terdiri dari Nama, No. Telp, dan Email.

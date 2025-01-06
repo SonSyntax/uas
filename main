@@ -1,18 +1,23 @@
+import re
+from Data.Data1 import Data_Pendaftaran
+from View.View1 import view_pendaftaran
+from Process.Process1 import process_pendaftaran
+
 def main():
     data_table = []
     while True:
         try:
             name, phone, email = view.get_input()
-            data = Data(name, phone, email)
+            data = Data_Pendaftaran(name, phone, email)
             
-            process.validate_data(data)
+            process_Pendaftaran.validate_data(data)
             
             data_table.append(data)
-            view.display_message("pendaftaran valid")
+            view_Pendaftaran.display_message("pendaftaran valid")
             
-            view.table_view(data_table)
+            view_Pendaftaran.table_view(data_table)
         except ValueError as e:
-            view.display_message(f"Error: {e}")
+            view_Pendaftaran.display_message(f"Error: {e}")
             
         continue_input = input("apakah anda ingin melalukan pendaftaran lagi? (y/n): ")
         if continue_input.lower() != "y":

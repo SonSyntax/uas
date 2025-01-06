@@ -2,6 +2,12 @@
 
 # Program ini terdiri dari beberapa kelas utama, yaitu Data, view, dan process.
 
+Berikut penjelasan Lengkap :
+```python
+https://youtu.be/j1wJ_SsXOsI?feature=shared
+````
+
+
 ## 1. Kelas Data
 Kelas Data digunakan untuk menyimpan informasi pengguna yang terdiri dari Nama, No. Telp, dan Email.
 

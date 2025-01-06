@@ -1,6 +1,6 @@
 from Data.Data1 import Data_Pendaftaran
 
-class view:
+class view_pendaftaran:
     def get_input():
         name = input("Nama: ")
         phone = input("No. Telp: ")

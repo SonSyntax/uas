@@ -1,4 +1,8 @@
-class process:
+import re
+from Data.Data1 import Data_Pendaftaran
+from View.View1 import view_pendaftaran
+
+class process_pendaftaran:
     def validate_name(name):
         if not name.isalpha:
             raise ValueError("Hanya berisi huruf")
@@ -12,6 +16,6 @@ class process:
             raise ValueError("harus meggunakan huruf '@' & '.'  .")
         
     def validate_data(data):
-        process.validate_name(data.name)
-        process.validate_phone(data.phone)
-        process.validate_email(data.email)
+        process_pendaftaran.validate_name(data.name)
+        process_pendaftaran.validate_phone(data.phone)
+        process_pendaftaran.validate_email(data.email)
